@@ -5,7 +5,7 @@ namespace JasperPHP;
 class JasperPHP
 {
     protected $executable = 'jasperstarter'; //executable jasperstarter
-    protected $path_executable = __DIR__ . '/../JasperStarter/bin/'; //Path to executable
+    protected $path_executable;
     protected $the_command;
     protected $redirect_output;
     protected $background;
@@ -16,6 +16,7 @@ class JasperPHP
 
     function __construct($resource_dir = false)
     {
+        $this->path_executable = __DIR__ . '/../JasperStarter/bin'; //Path to executable
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
            $this->windows = true;
 
@@ -190,7 +191,7 @@ class JasperPHP
 
         if($return_var != 0)
             throw new \Exception('Your report has an error and couldn \'t be processed!\ Try to output the command using the function `output();` and run it manually in the console.', 1);
-    
+
         return $output;
     }
 }
