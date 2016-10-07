@@ -108,7 +108,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';	
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
 
 $jasper = new JasperPHP;
 $jasper->compile($input)->execute();
@@ -126,8 +126,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jasper';	
-$output = __DIR__;	
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jasper';
+$output = __DIR__;
 
 $jasper = new JasperPHP;
 
@@ -169,10 +169,10 @@ We can also specify parameters for connecting to database:
 
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;	
+use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';	
-$output = __DIR__;	
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
+$output = __DIR__;
 
 $jasper = new JasperPHP;
 $jasper->process(
@@ -229,12 +229,12 @@ Or in your 'composer.json' file add:
 use JasperPHP\JasperPHP;
 
 Route::get('/reports', function () {
-	
+
     $output = public_path() . '/report/'.time().'_hello_world';
     $report = new JasperPHP;
     $report->process(
-    	public_path() . '/report/hello_world.jrxml', 
-        $output, 
+    	public_path() . '/report/hello_world.jrxml',
+        $output,
         array('pdf', 'rtf', 'xml'),
         array(),
         array()  
@@ -255,22 +255,21 @@ use JasperPHP\JasperPHP;
 public function xmlToPdf()
     {
         $output = public_path() . '/report/'.time().'_CancelAck';
-        $output = public_path() . '/report/'.time().'_CancelAck';
         $ext = "pdf";
         $data_file = public_path() . '/report/CancelAck.xml';
         $driver = 'xml';
         $xml_xpath = '/CancelResponse/CancelResult/ID';
-          
-        \JasperPHP::process(
-            public_path() . '/report/CancelAck.jrxml', 
-            $output, 
+				$jasper = new JasperPHP;
+        $jasper->process(
+            public_path() . '/report/CancelAck.jrxml',
+            $output,
             array($ext),
             array(),
             array('data_file' => $data_file, 'driver' => $driver, 'xml_xpath' => $xml_xpath),                   
             false,
             false
         )->execute();
-        
+
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
@@ -284,16 +283,67 @@ public function xmlToPdf()
 
     }
 ```
-**Note:** 
+**Note:**
 
 To use the example above you must copy the sample files located at:
 
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml** 
+**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
 and
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml** 
+**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml**
 to folder:
-**\public\report** 
+**\public\report**
 
+###Additional Information - Reports from a xml in Laravel 5.2
+
+See how easy it is to generate a report with a source an json file:
+
+```php
+
+use JasperPHP\JasperPHP;
+
+public function jsonToPdf()
+    {
+        $output = public_path() . '/report/'.time().'_Contacts';
+        $ext = "pdf";
+				$driver = 'json';
+				$json_query= "contacts.person";
+        $data_file = public_path() . '/report/contacts.json';
+
+				$jasper = new JasperPHP;
+        $jasper->process(
+            public_path() . '/report/json.jrxml',
+            $output,
+            array($ext),
+            array(),
+            array(
+							'driver' => $driver,
+							'json_query' => $json_query,
+							'data_file' => $data_file
+						)
+        )->execute();
+
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Content-Length: ' . filesize($output.'.'.$ext));
+        flush();
+        readfile($output.'.'.$ext);
+        unlink($output.'.'.$ext);
+
+    }
+```
+**Note:**
+
+To use the example above you must copy the sample files located at:
+
+**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
+and
+**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml**
+to folder:
+**\public\report**
 
 ###MySQL
 
