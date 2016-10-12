@@ -145,7 +145,6 @@ class JasperPHP
 
             if ( isset($db_connection['json_query']) )
                 $command .= ' --json-query ' . $db_connection['json-query'];
-
         }
 
         $this->redirect_output  = $redirect_output;
