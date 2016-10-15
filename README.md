@@ -1,10 +1,13 @@
 # JasperReports for PHP and Laravel Framework
 
-[![Latest Stable Version](https://poser.pugx.org/lavela/phpjasper/v/stable)](https://packagist.org/packages/lavela/phpjasper)  [![Latest Unstable Version](https://poser.pugx.org/lavela/phpjasper/v/unstable)](https://packagist.org/packages/lavela/phpjasper) [![License](https://poser.pugx.org/lavela/phpjasper/license)](https://packagist.org/packages/lavela/phpjasper) [![Total Downloads](https://poser.pugx.org/lavela/phpjasper/downloads)](https://packagist.org/packages/lavela/phpjasper)
+[![Latest Stable Version](https://poser.pugx.org/dericktan/phpjasper/v/stable)](https://packagist.org/packages/dericktan/phpjasper)
+[![License](https://poser.pugx.org/dericktan/phpjasper/license)](https://packagist.org/packages/dericktan/phpjasper)
+[![Monthly Downloads](https://poser.pugx.org/dericktan/phpjasper/d/monthly)](https://packagist.org/packages/dericktan/phpjasper)
+[![Total Downloads](https://poser.pugx.org/dericktan/phpjasper/downloads)](https://packagist.org/packages/dericktan/phpjasper)
 
 **Is using Linux servers?**
 
-Do not forget to grant permission 777 for the directory **/vendor/lavela/phpjasper/src/JasperStarter/bin** and the file binary **jasperstarter**
+Do not forget to grant permission 777 for the directory **/vendor/dericktan/phpjasper/src/JasperStarter/bin** and the file binary **jasperstarter**
 
 ##Introduction
 
@@ -71,14 +74,14 @@ Now run the `java -version` again and check if the output is ok.
 
 Install [Composer](http://getcomposer.org) if you don't have it.
 ```
-composer require lavela/phpjasper
+composer require dericktan/phpjasper
 ```
 Or in your 'composer.json' file add:
 
 ```javascript
 {
     "require": {
-		"lavela/phpjasper": "1.*"
+		"dericktan/phpjasper": "1.*"
     }
 }
 ```
@@ -93,7 +96,7 @@ and thats it.
 
 ###The *Hello World* example.
 
-Go to the examples directory in the root of the repository (`vendor/lavela/phpjasper/examples`).
+Go to the examples directory in the root of the repository (`vendor/dericktan/phpjasper/examples`).
 Open the `hello_world.jrxml` file with iReport or with your favorite text editor and take a look at the source code.
 
 #### Compiling
@@ -108,7 +111,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';	
+$input = __DIR__ . '/vendor/dericktan/phpjasper/examples/hello_world.jrxml';
 
 $jasper = new JasperPHP;
 $jasper->compile($input)->execute();
@@ -126,8 +129,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jasper';	
-$output = __DIR__;	
+$input = __DIR__ . '/vendor/dericktan/phpjasper/examples/hello_world.jasper';
+$output = __DIR__;
 
 $jasper = new JasperPHP;
 
@@ -152,7 +155,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world_params.jrxml';
+$input = __DIR__ . '/vendor/dericktan/phpjasper/examples/hello_world_params.jrxml';
 
 $jasper = new JasperPHP;
 $output = $jasper->list_parameters($input)->execute();
@@ -169,10 +172,10 @@ We can also specify parameters for connecting to database:
 
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;	
+use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';	
-$output = __DIR__;	
+$input = __DIR__ . '/vendor/dericktan/phpjasper/examples/hello_world.jrxml';
+$output = __DIR__;
 
 $jasper = new JasperPHP;
 $jasper->process(
@@ -194,14 +197,14 @@ $jasper->process(
 
 1. Install [Composer](http://getcomposer.org) if you don't have it.
 ```
-composer require lavela/phpjasper
+composer require dericktan/phpjasper
 ```
 Or in your 'composer.json' file add:
 
 ```javascript
 {
     "require": {
-		"lavela/phpjasper": "1.*"
+		"dericktan/phpjasper": "1.*"
     }
 }
 ```
@@ -215,7 +218,7 @@ Or in your 'composer.json' file add:
 
 4. Create a folder **/report** on **/public directory**
 
-5. Copy the file **hello_world.jrxml** in **/vendor/lavela/phpjasper/examples** from directory: **/public/report**
+5. Copy the file **hello_world.jrxml** in **/vendor/dericktan/phpjasper/examples** from directory: **/public/report**
 
 6. Run **php artisan serve**
 
@@ -229,12 +232,12 @@ Or in your 'composer.json' file add:
 use JasperPHP\JasperPHP;
 
 Route::get('/reports', function () {
-	
+
     $output = public_path() . '/report/'.time().'_hello_world';
     $report = new JasperPHP;
     $report->process(
-    	public_path() . '/report/hello_world.jrxml', 
-        $output, 
+    	public_path() . '/report/hello_world.jrxml',
+        $output,
         array('pdf', 'rtf', 'xml'),
         array(),
         array()  
@@ -255,22 +258,21 @@ use JasperPHP\JasperPHP;
 public function xmlToPdf()
     {
         $output = public_path() . '/report/'.time().'_CancelAck';
-        $output = public_path() . '/report/'.time().'_CancelAck';
         $ext = "pdf";
         $data_file = public_path() . '/report/CancelAck.xml';
         $driver = 'xml';
         $xml_xpath = '/CancelResponse/CancelResult/ID';
-          
-        \JasperPHP::process(
-            public_path() . '/report/CancelAck.jrxml', 
-            $output, 
+				$jasper = new JasperPHP;
+        $jasper->process(
+            public_path() . '/report/CancelAck.jrxml',
+            $output,
             array($ext),
             array(),
             array('data_file' => $data_file, 'driver' => $driver, 'xml_xpath' => $xml_xpath),                   
             false,
             false
         )->execute();
-        
+
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
@@ -284,16 +286,67 @@ public function xmlToPdf()
 
     }
 ```
-**Note:** 
+**Note:**
 
 To use the example above you must copy the sample files located at:
 
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml** 
+**\vendor\dericktan\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
 and
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml** 
+**\vendor\dericktan\phpjasper\src\JasperStarter\examples\CancelAck.xml**
 to folder:
-**\public\report** 
+**\public\report**
 
+###Additional Information - Reports from a xml in Laravel 5.2
+
+See how easy it is to generate a report with a source an json file:
+
+```php
+
+use JasperPHP\JasperPHP;
+
+public function jsonToPdf()
+    {
+        $output = public_path() . '/report/'.time().'_Contacts';
+        $ext = "pdf";
+				$driver = 'json';
+				$json_query= "contacts.person";
+        $data_file = public_path() . '/report/contacts.json';
+
+				$jasper = new JasperPHP;
+        $jasper->process(
+            public_path() . '/report/json.jrxml',
+            $output,
+            array($ext),
+            array(),
+            array(
+							'driver' => $driver,
+							'json_query' => $json_query,
+							'data_file' => $data_file
+						)
+        )->execute();
+
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Content-Length: ' . filesize($output.'.'.$ext));
+        flush();
+        readfile($output.'.'.$ext);
+        unlink($output.'.'.$ext);
+
+    }
+```
+**Note:**
+
+To use the example above you must copy the sample files located at:
+
+**\vendor\dericktan\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
+and
+**\vendor\dericktan\phpjasper\src\JasperStarter\examples\CancelAck.xml**
+to folder:
+**\public\report**
 
 ###MySQL
 
@@ -320,6 +373,8 @@ Drop me a line on Skype [leandro.bittencourt16] or E-Mail [leandrocintrabitencou
 Drop me a line on Skype [danielrodrigueslima] or E-Mail [danielrodrigues-ti@hotmail.com]
 
 Drop me a line on E-Mail [jefferson.barreto@outlook.com]
+
+Drop me a line on E-Mail [derick.tan988@gmail.com]
 
 ##License
 

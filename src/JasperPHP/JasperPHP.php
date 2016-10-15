@@ -143,6 +143,8 @@ class JasperPHP
             if ( isset($db_connection['data_file']) )
                 $command .= ' --data-file ' . $db_connection['data_file'];
 
+            if ( isset($db_connection['json_query']) )
+                $command .= ' --json-query ' . $db_connection['json_query'];
         }
 
         $this->redirect_output  = $redirect_output;

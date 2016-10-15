@@ -1,5 +1,5 @@
 {
-    "name": "lavela/phpjasper",
+    "name": "dericktan/phpjasper",
     "description": "Create Reports in PHP with JasperReports",
     "license": "MIT",
     "keywords": [
@@ -8,11 +8,12 @@
         "jasperreports",
         "reports",
         "pdf",
-		"xml",
-		"PHP",
-        "java"
+        "xml",
+        "PHP",
+        "java",
+        "json"
       ],
-    "homepage": "https://github.com/lavela/phpjasper",
+    "homepage": "https://github.com/Dericktan/phpjasper",
 	"authors": [
         {
             "name": "Leandro Bitencourt",
@@ -28,6 +29,11 @@
         {
             "name": "Jefferson Barreto",
             "email": "jefferson.barreto@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Derick Tan",
+            "email": "derick.tan988@gmail.com",
             "role": "Developer"
         }
     ],
