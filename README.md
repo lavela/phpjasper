@@ -81,7 +81,7 @@ Or in your 'composer.json' file add:
 ```javascript
 {
     "require": {
-		"lavela/phpjasper": "1.*"
+		"lavela/phpjasper": "2.*"
     }
 }
 ```
