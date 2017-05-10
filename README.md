@@ -129,7 +129,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use JasperPHP\JasperPHP;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jasper';
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
 $output = __DIR__;
 
 $jasper = new JasperPHP;
@@ -182,7 +182,7 @@ $jasper->process(
 	$input,
 	$output,
 	array("pdf", "rtf"),
-	array("php_version" => phpversion()),
+	array(),
 	array(
 		'driver' => 'postgres',
 		'username' => 'vagrant',
@@ -204,7 +204,7 @@ Or in your 'composer.json' file add:
 ```javascript
 {
     "require": {
-		"lavela/phpjasper": "1.*"
+		"lavela/phpjasper": "2.*"
     }
 }
 ```
@@ -216,15 +216,15 @@ Or in your 'composer.json' file add:
 
 	**JasperPHP\JasperPHPServiceProvider::class,**
 
-4. Create a folder **/report** on **/public directory**
+4. Create a folder **/examples** on **/public directory**
 
-5. Copy the file **hello_world.jrxml** in **/vendor/lavela/phpjasper/examples** from directory: **/public/report**
+5. Copy the file **hello_world.jrxml** in **/vendor/lavela/phpjasper/examples** from directory: **/public/examples**
 
 6. Run **php artisan serve**
 
 7. Access **localhost:8000/reports**
 
-8. Check the directory **/public/report**. You now have 3 files, `hello_world.pdf`, `hello_world.rtf` and `hello_world.xml`.
+8. Check the directory **/public/examples**. You now have 3 files, `hello_world.pdf`, `hello_world.rtf` and `hello_world.xml`.
 
 **Below the code you will use in your route.php**
 
@@ -233,10 +233,10 @@ use JasperPHP\JasperPHP;
 
 Route::get('/reports', function () {
 
-    $output = public_path() . '/report/'.time().'_hello_world';
+    $output = public_path() . '/examples/'.time().'_hello_world';
     $report = new JasperPHP;
     $report->process(
-    	public_path() . '/report/hello_world.jrxml',
+    	public_path() . '/examples/hello_world.jrxml',
         $output,
         array('pdf', 'rtf', 'xml'),
         array(),
@@ -246,107 +246,55 @@ Route::get('/reports', function () {
 ```
 In this example we generate reports pdf, rtf and xml.
 
-
-###Additional Information - Reports from a xml in Laravel 5.2
-
-See how easy it is to generate a report with a source an xml file:
+### See how easy it is to generate a report with a source an xml file: 
 
 ```php
 
 use JasperPHP\JasperPHP;
 
-public function xmlToPdf()
-    {
-        $output = public_path() . '/report/'.time().'_CancelAck';
-        $ext = "pdf";
-        $data_file = public_path() . '/report/CancelAck.xml';
-        $driver = 'xml';
-        $xml_xpath = '/CancelResponse/CancelResult/ID';
-				$jasper = new JasperPHP;
-        $jasper->process(
-            public_path() . '/report/CancelAck.jrxml',
-            $output,
-            array($ext),
-            array(),
-            array('data_file' => $data_file, 'driver' => $driver, 'xml_xpath' => $xml_xpath),                   
-            false,
-            false
-        )->execute();
+$input = __DIR__ . '/vendor/lavela/examples/hello_world_xml.jrxml';
+$output = __DIR__ . '/';
 
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
-        header('Content-Transfer-Encoding: binary');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Content-Length: ' . filesize($output.'.'.$ext));
-        flush();
-        readfile($output.'.'.$ext);
-        unlink($output.'.'.$ext);
+$jasper = new JasperPHP;
 
-    }
+$jasper->process(
+    $input,
+    $output,
+    array('pdf'),
+    array(),
+    array(
+        'driver' => 'xml',
+        'xml_xpath' => '/CancelResponse/CancelResult/ID'
+        'data_file' => __DIR__ . '/vendor/lavela/examples/xmlExample.xml',
+    )
+)->execute();
+
 ```
-**Note:**
 
-To use the example above you must copy the sample files located at:
-
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
-and
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml**
-to folder:
-**\public\report**
-
-###Additional Information - Reports from a xml in Laravel 5.2
-
-See how easy it is to generate a report with a source an json file:
+### See how easy it is to generate a report with a source an json file:
 
 ```php
 
 use JasperPHP\JasperPHP;
 
-public function jsonToPdf()
-    {
-        $output = public_path() . '/report/'.time().'_Contacts';
-        $ext = "pdf";
-				$driver = 'json';
-				$json_query= "contacts.person";
-        $data_file = public_path() . '/report/contacts.json';
+$input = __DIR__ . '/vendor/lavela/examples/hello_world_json.jrxml';
+$output = __DIR__ . '/';
 
-				$jasper = new JasperPHP;
-        $jasper->process(
-            public_path() . '/report/json.jrxml',
-            $output,
-            array($ext),
-            array(),
-            array(
-							'driver' => $driver,
-							'json_query' => $json_query,
-							'data_file' => $data_file
-						)
-        )->execute();
+$jasper = new JasperPHP;
 
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename='.time().'_CancelAck.'.$ext);
-        header('Content-Transfer-Encoding: binary');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Content-Length: ' . filesize($output.'.'.$ext));
-        flush();
-        readfile($output.'.'.$ext);
-        unlink($output.'.'.$ext);
+$jasper->process(
+    $input,
+    $output,
+    array('pdf'),
+    array(),
+    array(
+        'driver' => 'json',
+        'json_query' => 'contacts.person',
+        'data_file' => __DIR__ . '/vendor/lavela/examples/jsonExample.json'
+    )
+)->execute();
 
-    }
 ```
-**Note:**
-
-To use the example above you must copy the sample files located at:
-
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.jrxml**
-and
-**\vendor\lavela\phpjasper\src\JasperStarter\examples\CancelAck.xml**
-to folder:
-**\public\report**
 
 ###MySQL
 

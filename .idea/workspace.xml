@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b906ba6-53f5-4671-88fb-abb1468e7e96" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/phpjasper.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/csvExample.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/hello_world_csv.jrxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/hello_world_xml.jrxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/xmlExample.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/changes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/changes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/css/apache-maven-fluido.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/css/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/css/site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/dependencies.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/files.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/accessories-text-editor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/add.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/apache-maven-project-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/application-certificate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/close.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/collapsed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/contact-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/document-properties.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/drive-harddisk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/expanded.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/fix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/icon_error_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/icon_help_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/icon_info_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/icon_success_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/icon_warning_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/image-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/internet-web-browser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/logos/build-by-maven-black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/logos/build-by-maven-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/logos/maven-feather.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/network-server.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/package-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/profiles/pre-release.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/profiles/retired.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/profiles/sandbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/remove.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/update.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/images/window-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/issue-tracking.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/js/apache-maven-fluido.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/license.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/project-info.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/project-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/screenshots.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/source-repository.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/team-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/unicode-pdf-export.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/cs/usage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/css/apache-maven-fluido.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/css/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/css/site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/changes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/css/apache-maven-fluido.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/css/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/css/site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/dependencies.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/files.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/accessories-text-editor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/add.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/apache-maven-project-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/application-certificate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/close.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/collapsed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/contact-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/document-properties.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/drive-harddisk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/expanded.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/fix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/icon_error_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/icon_help_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/icon_info_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/icon_success_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/icon_warning_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/image-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/internet-web-browser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/logos/build-by-maven-black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/logos/build-by-maven-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/logos/maven-feather.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/network-server.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/package-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/profiles/pre-release.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/profiles/retired.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/profiles/sandbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/remove.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/update.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/images/window-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/issue-tracking.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/js/apache-maven-fluido.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/license.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/project-info.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/project-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/screenshots.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/source-repository.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/team-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/unicode-pdf-export.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/de/usage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/dependencies.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/files.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/JasperStarter_screenshot-help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/JasperStarter_screenshot-pr-help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/JasperStarter_screenshot_parameter-prompt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/JasperStarter_screenshot_print_dialog.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/JasperStarter_screenshot_view.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/accessories-text-editor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/add.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/apache-maven-project-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/application-certificate.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/close.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/collapsed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/contact-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/document-properties.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/drive-harddisk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/expanded.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/fix.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/icon_error_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/icon_help_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/icon_info_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/icon_success_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/icon_warning_sml.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/image-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/internet-web-browser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/logos/build-by-maven-black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/logos/build-by-maven-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/logos/maven-feather.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/network-server.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/package-x-generic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/profiles/pre-release.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/profiles/retired.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/profiles/sandbox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/remove.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/update.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/images/window-new.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/issue-tracking.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/js/apache-maven-fluido.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/license.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/project-info.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/project-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/references.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/screenshots.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/source-repository.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/team-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/unicode-pdf-export.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/docs/usage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/jdbc/arial.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/jdbc/mysql-connector-java-5.1.34-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/jdbc/ptsans.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/ant-1.9.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/argparse4j-0.7.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-anim-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-awt-util-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-bridge-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-css-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-dom-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-ext-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-gvt-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-parser-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-script-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-svg-dom-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-svggen-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-util-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/batik-xml-1.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/commons-codec-1.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/commons-collections-3.2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/commons-collections4-4.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/commons-io-2.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/core-3.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/dom4j-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/groovy-all-2.4.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/icu4j-57.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/itext-4.2.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jasperreports-6.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jasperreports-functions-6.0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jasperstarter_ORI.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/javastarter.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jcommon-1.0.23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jfreechart-1.0.19.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/pdf-renderer-1.0.5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/poi-3.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/servlet-api-3.0-alpha-1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/xalan-2.7.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/xml-apis-1.3.04.jar" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/contacts.json" afterPath="$PROJECT_DIR$/examples/jsonExample.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/json.jrxml" afterPath="$PROJECT_DIR$/examples/hello_world_json.jrxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/itext-2.1.7.js5.jar" afterPath="$PROJECT_DIR$/src/JasperStarter/lib/itext-2.1.7.js2.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jasperreports-6.0.4.jar" afterPath="$PROJECT_DIR$/src/JasperStarter/lib/jasperreports-6.1.0.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/joda-time-2.1.jar" afterPath="$PROJECT_DIR$/src/JasperStarter/lib/joda-time-2.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JasperStarter/bin/jasperstarter.exe" afterPath="$PROJECT_DIR$/src/JasperStarter/bin/jasperstarter.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JasperStarter/lib/jasperstarter.jar" afterPath="$PROJECT_DIR$/src/JasperStarter/lib/jasperstarter.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JasperPHP/JasperPHP.php" afterPath="$PROJECT_DIR$/src/JasperPHP/JasperPHP.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JasperStarter/README.md" afterPath="$PROJECT_DIR$/src/JasperStarter/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JasperStarter/bin/jasperstarter" afterPath="$PROJECT_DIR$/src/JasperStarter/bin/jasperstarter" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="17">
+                <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JasperPHP.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JasperPHP/JasperPHP.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2397">
+              <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>path_executable</find>
+      <find>command</find>
+      <find>redirect_output</find>
+      <find>resource_directory</find>
+      <find>$background</find>
+      <find>isWindows</find>
+      <find>resource_dir</find>
+      <find>processcomma</find>
+    </findStrings>
+  </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="git commit -m &quot;Changes in structure and improvement in the generation of reports&quot;" />
+      <command text="git add *" />
+    </commandsHistory>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/JasperPHP/JasperPHP.php" />
+        <option value="$PROJECT_DIR$/vendor/lavela/phpjasper/src/JasperPHP/JasperPHP.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpjasper" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JasperPHP" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../phpjasperoriginal" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b906ba6-53f5-4671-88fb-abb1468e7e96" name="Default" comment="" />
+      <created>1494251400795</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494251400795</updated>
+      <workItem from="1494251402302" duration="2675000" />
+      <workItem from="1494263408454" duration="10819000" />
+      <workItem from="1494331651823" duration="16868000" />
+      <workItem from="1494416490446" duration="5430000" />
+      <workItem from="1494424434085" duration="2936000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="38728000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vendor/lavela/phpjasper/src/JasperPHP/JasperPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2958">
+          <caret line="174" column="35" lean-forward="false" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JasperPHP/JasperPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4709">
+            <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="296" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JasperPHP/JasperPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JasperPHP/JasperPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/lavela/phpjasper/src/JasperPHP/JasperPHP.php" />
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JasperPHP/JasperPHP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2397">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

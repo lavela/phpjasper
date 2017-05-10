@@ -4,30 +4,25 @@ namespace JasperPHP;
 
 class JasperPHP
 {
-    protected $executable = 'jasperstarter'; //executable jasperstarter
-    protected $path_executable;
-    protected $the_command;
-    protected $redirect_output;
-    protected $background;
-    protected $windows = false;
+    private $executable; //executable jasperstarter
+    private $path_executable;
+    private $the_command;
+    private $resource;
+    private $formats;
+    private $input_file;
+    private $output_file;
+    private $db_connection;
 
-    protected $formats = array('pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint');
-    protected $resource_directory; //Path to report resource dir or jar file
-
-    function __construct($resource_dir = false)
+    function __construct()
     {
-        $this->path_executable = __DIR__ . '/../JasperStarter/bin'; //Path to executable
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
-           $this->windows = true;
-
-        if (!$resource_dir) {
-            $this->resource_directory = __DIR__ . '/../../../vendor/cossou/jasperphp/src/JasperStarter/bin';
-        } else {
-            if (!file_exists($resource_dir))
-                throw new \Exception('Invalid resource directory.', 1);
-
-            $this->resource_directory = $resource_dir;
-        }
+        $this->setExecutable('jasperstarter');
+        $this->setPathExecutable(); //Path to executable
+        $this->formats = [
+            'pdf', 'rtf', 'xls', 'xlsx', 'docx',
+            'odt', 'ods', 'pptx', 'csv', 'html',
+            'xhtml', 'xml', 'jrprint'
+        ];
+        $this->setResource();
     }
 
     public static function __callStatic($method, $parameters)
@@ -39,133 +34,32 @@ class JasperPHP
         return call_user_func_array(array(new $model, $method), $parameters);
     }
 
-    public function compile($input_file, $output_file = false, $background = true, $redirect_output = true)
+    public function compile($input_file, $output_file = false)
     {
-        if(is_null($input_file) || empty($input_file))
-            throw new \Exception('No input file', 1);
+        $this->setInputFile($input_file);
+        $this->output_file = $output_file;
 
-        $command = ($this->windows) ? $this->executable : './' . $this->executable;
-
-        $command .= ' compile ';
-
-        $command .= "\"$input_file\"";
-
-        if( $output_file !== false )
-            $command .= ' -o ' . "\"$output_file\"";
-
-        $this->redirect_output  = $redirect_output;
-        $this->background       = $background;
-        $this->the_command      = $command;
+        $this->the_command = $this->generateCommand('compile');
 
         return $this;
     }
 
-    public function process($input_file, $output_file = false, $format = array('pdf'), $parameters = array(), $db_connection = array(), $background = true, $redirect_output = true)
+    public function process($input_file, $output_file = false, $format = array('pdf'), $parameters = array(), $db_connection = array())
     {
-        if(is_null($input_file) || empty($input_file))
-            throw new \Exception('No input file', 1);
+        $this->setInputFile($input_file);
+        $this->output_file = $output_file;
+        $this->db_connection = $db_connection;
 
-        if( is_array($format) )
-        {
-            foreach ($format as $key)
-            {
-                if( !in_array($key, $this->formats))
-                    throw new \Exception('Invalid format!', 1);
-            }
-        } else {
-            if( !in_array($format, $this->formats))
-                    throw new \Exception('Invalid format!', 1);
-        }
-
-        $command = ($this->windows) ? $this->executable : './' . $this->executable;
-
-        $command .= ' process ';
-
-        $command .= "\"$input_file\"";
-
-        if( $output_file !== false )
-            $command .= ' -o ' . "\"$output_file\"";
-
-        if( is_array($format) )
-            $command .= ' -f ' . join(' ', $format);
-        else
-            $command .= ' -f ' . $format;
-        /*
-                // Resources dir
-                $command .= " -r " . $this->resource_directory;
-        */
-        if( count($parameters) > 0 )
-        {
-            $command .= ' -P ';
-
-            foreach ($parameters as $key => $value)
-            {
-                $param = $key . '="' . $value . '" ';
-                $command .= " " .$param. " ";
-            }
-
-        }
-
-        if( count($db_connection) > 0 )
-        {
-            $command .= ' -t ' . $db_connection['driver'];
-
-            if(isset($db_connection['username']))
-                $command .= " -u " . $db_connection['username'];
-
-            if( isset($db_connection['password']) && !empty($db_connection['password']) )
-                $command .= ' -p ' . $db_connection['password'];
-
-            if( isset($db_connection['host']) && !empty($db_connection['host']) )
-                $command .= ' -H ' . $db_connection['host'];
-
-            if( isset($db_connection['database']) && !empty($db_connection['database']) )
-                $command .= ' -n ' . $db_connection['database'];
-
-            if( isset($db_connection['port']) && !empty($db_connection['port']) )
-                $command .= ' --db-port ' . $db_connection['port'];
-
-            if( isset($db_connection['jdbc_driver']) && !empty($db_connection['jdbc_driver']) )
-                $command .= ' --db-driver ' . $db_connection['jdbc_driver'];
-
-            if( isset($db_connection['jdbc_url']) && !empty($db_connection['jdbc_url']) )
-                $command .= ' --db-url ' . $db_connection['jdbc_url'];
-
-            if ( isset($db_connection['jdbc_dir']) && !empty($db_connection['jdbc_dir']) )
-                $command .= ' --jdbc-dir ' . $db_connection['jdbc_dir'];
-
-            if ( isset($db_connection['db_sid']) && !empty($db_connection['db_sid']) )
-                $command .= ' --db-sid ' . $db_connection['db_sid'];
-
-            if ( isset($db_connection['xml_xpath']) )
-                $command .= ' --xml-xpath ' . $db_connection['xml_xpath'];
-
-            if ( isset($db_connection['data_file']) )
-                $command .= ' --data-file ' . $db_connection['data_file'];
-
-            if ( isset($db_connection['json_query']) )
-                $command .= ' --json-query ' . $db_connection['json_query'];
-        }
-
-        $this->redirect_output  = $redirect_output;
-        $this->background       = $background;
-        $this->the_command      = $command;
+        $this->the_command = $this->generateCommand('process', $format, $parameters);
 
         return $this;
     }
 
     public function list_parameters($input_file)
     {
-        if(is_null($input_file) || empty($input_file))
-            throw new \Exception('No input file', 1);
+        $this->setInputFile($input_file);
 
-        $command = ($this->windows) ? $this->executable : './' . $this->executable;
-
-        $command .= ' list_parameters ';
-
-        $command .= "\"$input_file\"";
-
-        $this->the_command = $command;
+        $this->the_command = $this->generateCommand('list_parameters');
 
         return $this;
     }
@@ -177,23 +71,154 @@ class JasperPHP
 
     public function execute($run_as_user = false)
     {
-
-        if( $run_as_user !== false && strlen($run_as_user > 0) && !$this->windows )
-            $this->the_command = 'su -u ' . $run_as_user . " -c \"" . $this->the_command . "\"";
-
         $output = array();
         $return_var = 0;
 
         if (is_dir($this->path_executable)){
             chdir($this->path_executable);
             exec($this->the_command, $output, $return_var);
+
+            if($return_var)
+                throw new \Exception("{$output[0]}", 1);
         } else {
             throw new \Exception('Invalid resource directory.', 1);
         }
 
-        if($return_var != 0)
-            throw new \Exception('Your report has an error and couldn \'t be processed!\ Try to output the command using the function `output();` and run it manually in the console.', 1);
+
 
         return $output;
     }
+
+    public function generateCommand($type, $array_format = false, $array_parameter = false, $run_as_user = false){
+        $formats = function($array_format){
+            if( is_array($array_format)) {
+                foreach ($array_format as $key) {
+                    if (!in_array($key, $this->formats))
+                        throw new \Exception('Invalid format!', 1);
+                }
+            }
+            else {
+                if (!in_array($array_format, $this->formats))
+                    throw new \Exception('Invalid format!', 1);
+            }
+
+            return is_array($array_format) ? implode(' ', $array_format) : $array_format;
+        };
+
+        $parameter = function($array_parameter){
+            $params = null;
+
+            if(is_array($array_parameter))
+            {
+                foreach ($array_parameter as $key => $value)
+                {
+                    $param = $key . '="' . $value . '" ';
+                    $params .= " " .$param. " ";
+                }
+
+            }
+
+            return !isset($params) ?: $params;
+        };
+
+        $command = [
+            'process' => [
+                'executable' => $this->executable,
+                'input_file' => "process \"{$this->input_file}\"",
+                'output_file' => (!empty($this->output_file)) ? "-o \"{$this->output_file}\"" : NULL,
+                'parameter' => (count($array_parameter) > 0) ?  "-P {$parameter($array_parameter)}" : NULL,
+                'format' => "-f {$formats($array_format)}",
+                'resource' => (!empty($this->resource)) ? "-r {$this->resource}" : NULL,
+                'connection' => (!empty($this->db_connection)) ? $this->generateCommandConnection() : NULL,
+                'run_as_user' => ($run_as_user && !$this->isWindows()) ? "su -u  {$run_as_user}  -c \"{$this->the_command}\"" : NULL,
+                'output_shell' => '2>&1'
+            ],
+            'compile' => [
+                'executable' => $this->executable,
+                'input_file' => "compile \"{$this->input_file}\"",
+                'output_file' => (!empty($this->output_file)) ? " -o \"{$this->output_file}\"" : NULL,
+                'output_console' => '2>&1'
+            ],
+            'list_parameters' => [
+                'list_parameters' => $this->executable,
+                'input_file' => "list_parameters \"{$this->input_file}\"",
+                'output_shell' => '2>&1'
+            ]
+        ];
+
+        return implode(' ', array_filter($command[$type]));
+
+    }
+
+    public function setPathExecutable($path_executable = false){
+        if($path_executable) {
+            if (!file_exists($path_executable))
+                throw new \Exception('Invalid executable directory.', 1);
+
+            $this->path_executable = $path_executable;
+        } else {
+            $path_executable = __DIR__ . '/../JasperStarter/bin';
+            $this->setPathExecutable($path_executable);
+        }
+
+    }
+
+    public function setResource($resource = false){
+        //resource dir or file
+        if ($resource) {
+            if (!file_exists($resource))
+                throw new \Exception('Invalid resource directory.', 1);
+
+            $this->resource = $resource;
+        } else {
+            $resource = __DIR__ . '/../JasperStarter/lib';
+            $this->setResource($resource);
+        }
+    }
+
+    public function setExecutable($executable){
+        $this->executable = ($this->isWindows()) ? "{$executable}" : "./{$executable}";
+    }
+
+    public function setInputFile($input_file){
+        if(is_null($input_file) || empty($input_file))
+            throw new \Exception('No input file', 1);
+
+        $this->input_file = $input_file;
+    }
+
+    public function generateCommandConnection(){
+        if (count($this->db_connection) > 0) {
+            if(!isset($this->db_connection['driver']))
+                throw new \Exception('Define drive the connection.', 1);
+
+            $connection = [
+                'driver' => " -t {$this->db_connection['driver']}",
+                'username' => isset($this->db_connection['username']) ? " -u \"{$this->db_connection['username']}\"" : NULL,
+                'password' => isset($this->db_connection['password']) ? " -p \"{$this->db_connection['password']}\"" : NULL,
+                'host' => isset($this->db_connection['host']) ? " -H \"{$this->db_connection['host']}\"" : NULL,
+                'database' => isset($this->db_connection['database']) ? " -n \"{$this->db_connection['database']}\"" : NULL,
+                'port' => isset($this->db_connection['port']) ? " --db-port \"{$this->db_connection['port']}\"" : NULL,
+                'jdbc_driver' => isset($this->db_connection['jdbc_driver']) ? " --db-driver \"{$this->db_connection['jdbc_driver']}\"" : NULL,
+                'jdbc_url' => isset($this->db_connection['jdbc_url']) ? " --db-url \"{$this->db_connection['jdbc_url']}\"" : NULL,
+                'jdbc_dir' => isset($this->db_connection['jdbc_dir']) ? " --jdbc-dir \"{$this->db_connection['jdbc_dir']}\"" : NULL,
+                'db_sid' => isset($this->db_connection['db_sid']) ? " --db-sid \"{$this->db_connection['db_sid']}\"" : NULL,
+                'xml_xpath' => isset($this->db_connection['xml_xpath']) ? " --xml-xpath \"{$this->db_connection['xml_xpath']}\"" : NULL,
+                'data_file' => isset($this->db_connection['data_file']) ? " --data-file \"{$this->db_connection['data_file']}\"" : NULL,
+                'json_query' => isset($this->db_connection['json_query']) ? " --json-query \"{$this->db_connection['json_query']}\"" : NULL
+            ];
+
+            return implode(' ', $connection);
+        }
+
+        return false;
+
+    }
+
+    public function isWindows(){
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN')
+            return true;
+        return false;
+    }
+
 }
