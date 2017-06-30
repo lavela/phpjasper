@@ -15,11 +15,10 @@ class JasperPHPServiceProvider extends ServiceProvider {
      */
     public function register() {
 
-        $this->app['jasperphp'] = $this->app->share(function()
+        $this->app->singleton('jasperphp', function ($app) 
         {
             return new JasperPHP;
         });
-
 
         /**
          * Register the alias.
