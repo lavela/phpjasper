@@ -5,15 +5,15 @@
 [![Monthly Downloads](https://poser.pugx.org/lavela/phpjasper/d/monthly)](https://packagist.org/packages/lavela/phpjasper)
 [![Total Downloads](https://poser.pugx.org/lavela/phpjasper/downloads)](https://packagist.org/packages/lavela/phpjasper)
 
-**Is using Linux servers?**
+**Using Linux servers?**
 
 Do not forget to grant permission 777 for the directory **/vendor/lavela/phpjasper/src/JasperStarter/bin** and the file binary **jasperstarter**
 
-##Introduction
+## Introduction
 
 This package aims to be a solution to compile and process JasperReports (.jrxml & .jasper files).
 
-###Why?
+### Why?
 
 Did you ever had to create a good looking Invoice with a lot of fields for your great web app?
 
@@ -21,7 +21,7 @@ I had to, and the solutions out there were not perfect. Generating *HTML* + *CSS
 
 Then I found **JasperReports** the best open source solution for reporting.
 
-###What can I do with this?
+### What can I do with this?
 
 Well, everything. JasperReports is a powerful tool for **reporting** and **BI**.
 
@@ -39,7 +39,7 @@ I recommend using [Jaspersoft Studio](http://community.jaspersoft.com/project/ja
 
 Package to generate reports with [JasperReports 6](http://community.jaspersoft.com/project/jasperreports-library) library through [JasperStarter v3](http://jasperstarter.sourceforge.net/) command-line tool.
 
-##Requirements
+## Requirements
 
 * Java JDK 1.8
 * PHP [exec()](http://php.net/manual/function.exec.php) function
@@ -47,9 +47,9 @@ Package to generate reports with [JasperReports 6](http://community.jaspersoft.c
 * [optional] [PostgreSQL Connector](https://jdbc.postgresql.org/download.html) (if you want to use database)
 * [optional] [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) (to draw and compile your reports)
 
-##Installation
+## Installation
 
-###Java
+### Java
 
 Check if you already have Java installed:
 
@@ -70,7 +70,7 @@ Then install it with: (Ubuntu/Debian)
 
 Now run the `java -version` again and check if the output is ok.
 
-##Install
+## Install
 
 Install [Composer](http://getcomposer.org) if you don't have it.
 ```
@@ -92,9 +92,13 @@ And the just run:
 
 and thats it.
 
-##Examples
+## Run Tests
+    
+    ./vendor/bin/phpunit
+    
+## Examples
 
-###The *Hello World* example.
+### The *Hello World* example.
 
 Go to the examples directory in the root of the repository (`vendor/lavela/phpjasper/examples`).
 Open the `hello_world.jrxml` file with iReport or with your favorite text editor and take a look at the source code.
@@ -119,7 +123,7 @@ $jasper->compile($input)->execute();
 
 This commando will compile the `hello_world.jrxml` source file to a `hello_world.jasper` file.
 
-####Processing
+#### Processing
 
 Now lets process the report that we compile before:
 
@@ -145,7 +149,7 @@ Now check the examples folder! :) Great right? You now have 2 files, `hello_worl
 
 Check the *API* of the  `compile` and `process` functions in the file `src/JasperPHP/JasperPHP.php` file.
 
-####Listing Parameters
+#### Listing Parameters
 
 Querying the jasper file to examine parameters available in the given jasper report file:
 
@@ -164,7 +168,7 @@ foreach($output as $parameter_description)
     print $parameter_description . '<pre>';
 ```
 
-###Advanced example - using a database
+### Advanced example - using a database
 
 We can also specify parameters for connecting to database:
 
@@ -193,7 +197,7 @@ $jasper->process(
 )->execute();
 ```
 
-###Using JasperPHP with Laravel 5.2!
+### Using JasperPHP with Laravel 5.2!
 
 1. Install [Composer](http://getcomposer.org) if you don't have it.
 ```
@@ -296,25 +300,25 @@ $jasper->process(
 
 ```
 
-###MySQL
+### MySQL
 
 We ship the [MySQL connector](http://dev.mysql.com/downloads/connector/j/) (v5.1.34) in the `/src/JasperStarter/jdbc/` directory.
 
-###PostgreSQL
+### PostgreSQL
 
 We ship the [PostgreSQL](https://jdbc.postgresql.org/) (v9.4-1203) in the `/src/JasperStarter/jdbc/` directory.
 
-##Performance
+## Performance
 
 Depends on the complexity, amount of data and the resources of your machine (let me know your use case).
 
 I have a report that generates a *Invoice* with a DB connection, images and multiple pages and it takes about **3/4 seconds** to process. I suggest that you use a worker to generate the reports in the background.
 
-##Thanks
+## Thanks
 
 Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
 
-##Questions?
+## Questions?
 
 Drop me a line on Skype [leandro.bittencourt16] or E-Mail [leandrocintrabitencourt@gmail.com]
 
@@ -324,6 +328,6 @@ Drop me a line on E-Mail [jefferson.barreto@outlook.com]
 
 Drop me a line on E-Mail [derick.tan988@gmail.com]
 
-##License
+## License
 
 MIT

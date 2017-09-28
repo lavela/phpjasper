@@ -1,0 +1,16 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="phpjasper Test Suite">
+            <directory>tests/unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>src/JasperPHP</directory>
+            <exclude>
+                <directory>src/JasperStarter</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
