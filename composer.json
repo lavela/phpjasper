@@ -45,5 +45,15 @@
         "psr-0": {
             "JasperPHP": "src/"
         }
+    },
+	"extra": {
+    "laravel": {
+        "providers": [
+            "Lavela\\JasperPHP\\JasperPHPServiceProvider"
+        ],
+        "aliases": {
+            "JasperPHP": "Lavela\\JasperPHP\\Facades\\JasperPHP"
+        }
     }
+}
 }
