@@ -1,27 +1,32 @@
-# JasperReports for PHP and Laravel Framework
+# PHPJasper
+_A PHP Report Generator_
 
-[![Latest Stable Version](https://poser.pugx.org/lavela/phpjasper/v/stable)](https://packagist.org/packages/lavela/phpjasper)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lavela/phpjasper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lavela/phpjasper/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/lavela/phpjasper.svg?style=flat-square)](https://packagist.org/packages/lavela/phpjasper)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-blue.svg?style=flat-square)](https://php.net/)
 [![License](https://poser.pugx.org/lavela/phpjasper/license)](https://packagist.org/packages/lavela/phpjasper)
-[![Monthly Downloads](https://poser.pugx.org/lavela/phpjasper/d/monthly)](https://packagist.org/packages/lavela/phpjasper)
-[![Total Downloads](https://poser.pugx.org/lavela/phpjasper/downloads)](https://packagist.org/packages/lavela/phpjasper)
 
-**Is using Linux servers?**
+### Docs
+[![Language-pt_BR](https://img.shields.io/badge/pt__BR-100%25-green.svg)](https://github.com/lavela/phpjasper/blob/master/docs/pt_BR/LEIA-ME_pt_BR.md)
 
-Do not forget to grant permission 777 for the directory **/vendor/lavela/phpjasper/src/JasperStarter/bin** and the file binary **jasperstarter**
+### About
+PHPJasper is the best solution to compile and process JasperReports (.jrxml & .jasper files) just using PHP, in short: to generate reports using PHP.
 
-##Introduction
+**Notes:** 
+* PHPJasper Can be used regardless of your PHP Framework
+* For PHP versions less than 7.0 see: [v1.16](https://github.com/PHPJasper/phpjasper/releases/tag/v1.16)
+* [Here](https://github.com/PHPJasper/examples) are several examples of how to use PHPJasper
 
-This package aims to be a solution to compile and process JasperReports (.jrxml & .jasper files).
 
-###Why?
+### Why PHPJasper?
 
 Did you ever had to create a good looking Invoice with a lot of fields for your great web app?
 
-I had to, and the solutions out there were not perfect. Generating *HTML* + *CSS* to make a *PDF*? WTF? That doesn't make any sense! :)
+I had to, and the solutions out there were not perfect. Generating *HTML* + *CSS* to make a *PDF*? That doesn't make any sense! :)
 
 Then I found **JasperReports** the best open source solution for reporting.
 
-###What can I do with this?
+### What can I do with this?
 
 Well, everything. JasperReports is a powerful tool for **reporting** and **BI**.
 
@@ -29,7 +34,7 @@ Well, everything. JasperReports is a powerful tool for **reporting** and **BI**.
 
 > The JasperReports Library is the world's most popular open source reporting engine. It is entirely written in Java and it is able to use data coming from any kind of data source and produce pixel-perfect documents that can be viewed, printed or exported in a variety of document formats including HTML, PDF, Excel, OpenOffice and Word.
 
-I recommend using [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) to build your reports, connect it to your datasource (ex: MySQL, POSTGRES), loop thru the results and output it to PDF, XLS, DOC, RTF, ODF, etc.
+It is recommended using [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) to build your reports, connect it to your datasource (ex: MySQL, POSTGRES), loop thru the results and output it to PDF, XLS, DOC, RTF, ODF, etc.
 
 *Some examples of what you can do:*
 
@@ -37,89 +42,97 @@ I recommend using [Jaspersoft Studio](http://community.jaspersoft.com/project/ja
 * Reports
 * Listings
 
-Package to generate reports with [JasperReports 6](http://community.jaspersoft.com/project/jasperreports-library) library through [JasperStarter v3](http://jasperstarter.sourceforge.net/) command-line tool.
+## Requirements
 
-##Requirements
-
+* PHP 7.0 or above
 * Java JDK 1.8
-* PHP [exec()](http://php.net/manual/function.exec.php) function
-* [optional] [Mysql Connector](http://dev.mysql.com/downloads/connector/j/) (if you want to use database)
-* [optional] [PostgreSQL Connector](https://jdbc.postgresql.org/download.html) (if you want to use database)
-* [optional] [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) (to draw and compile your reports)
 
-##Installation
+## Optional
 
-###Java
+* [Mysql JDBC Driver](http://dev.mysql.com/downloads/connector/j/) (If you want to use a database)
+* [PostgreSQL JDBC Driver](https://jdbc.postgresql.org/download.html) (If you want to use a database)
+* [Microsoft JDBC Drivers](https://www.microsoft.com/en-US/download/details.aspx?id=11774) (If you want to use a database)
+* [Jaspersoft Studio](http://community.jaspersoft.com/project/jaspersoft-studio) (to draw and compile your reports)
+
+### Java(JDK)
 
 Check if you already have Java installed:
 
 ```
-$ java -version
-java version "1.8.0_65"
-Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
-Java HotSpot(TM)  Client VM (build 25.65-b01, mixed mode, sharing)
+$ javac -version
+javac version 1.8.0_101
 ```
 
 If you get:
 
-	command not found: java
+    command not found: javac
 
 Then install it with: (Ubuntu/Debian)
 
-	$ sudo apt-get install default-jdk
+    $ sudo apt-get install default-jdk
 
-Now run the `java -version` again and check if the output is ok.
+To install on: (centOS/Fedora)
 
-##Install
+    # yum install java-1.8.0-openjdk.x86_64
+
+To install on windows visit the link-> [JDK](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html) and look for the most appropriate version for your system.
+
+Now run the `javac -version` again and check if the output is ok.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+## Installation
 
 Install [Composer](http://getcomposer.org) if you don't have it.
 ```
 composer require lavela/phpjasper
 ```
-Or in your 'composer.json' file add:
+Or in your file'composer.json' add:
 
-```javascript
+```json
 {
     "require": {
-		"lavela/phpjasper": "2.*"
+        "lavela/phpjasper": "^3.0"
     }
 }
 ```
 
 And the just run:
 
-	composer install
+    composer install
 
 and thats it.
 
-##Examples
+----------------------------------------------------------------------------------------------------------------------------
 
-###The *Hello World* example.
+## Examples
+
+### The *Hello World* example.
 
 Go to the examples directory in the root of the repository (`vendor/lavela/phpjasper/examples`).
-Open the `hello_world.jrxml` file with iReport or with your favorite text editor and take a look at the source code.
+Open the `hello_world.jrxml` file with Jaspersoft Studio or with your favorite text editor and take a look at the source code.
 
 #### Compiling
 
 First we need to compile our `JRXML` file into a `JASPER` binary file. We just have to do this one time.
 
-**Note:** You don't need to do this step if you are using *Jaspersoft Studio*. You can compile directly within the program.
+**Note 1:** You don't need to do this step if you are using *Jaspersoft Studio*. You can compile directly within the program.
 
 ```php
 
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;
+use PHPJasper\PHPJasper;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';   
 
-$jasper = new JasperPHP;
+$jasper = new PHPJasper;
 $jasper->compile($input)->execute();
 ```
 
 This commando will compile the `hello_world.jrxml` source file to a `hello_world.jasper` file.
 
-####Processing
+#### Processing
 
 Now lets process the report that we compile before:
 
@@ -127,25 +140,28 @@ Now lets process the report that we compile before:
 
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;
+use PHPJasper\PHPJasper;
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
-$output = __DIR__;
+$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jasper';  
+$output = __DIR__ . '/vendor/lavela/phpjasper/examples';    
+$options = [ 
+    'format' => ['pdf', 'rtf'] 
+];
 
-$jasper = new JasperPHP;
+$jasper = new PHPJasper;
 
 $jasper->process(
-	$input,
-	$output,
-	array("pdf", "rtf")
+    $input,
+    $output,
+    $options
 )->execute();
 ```
 
 Now check the examples folder! :) Great right? You now have 2 files, `hello_world.pdf` and `hello_world.rtf`.
 
-Check the *API* of the  `compile` and `process` functions in the file `src/JasperPHP/JasperPHP.php` file.
+Check the *methods* `compile` and `process` in `src/JasperPHP.php` for more details
 
-####Listing Parameters
+#### Listing Parameters
 
 Querying the jasper file to examine parameters available in the given jasper report file:
 
@@ -153,177 +169,187 @@ Querying the jasper file to examine parameters available in the given jasper rep
 
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;
+use PHPJasper\PHPJasper;
 
 $input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world_params.jrxml';
 
-$jasper = new JasperPHP;
-$output = $jasper->list_parameters($input)->execute();
+$jasper = new PHPJasper;
+$output = $jasper->listParameters($input)->execute();
 
 foreach($output as $parameter_description)
     print $parameter_description . '<pre>';
 ```
 
-###Advanced example - using a database
+### Using database to generate reports
 
 We can also specify parameters for connecting to database:
 
 ```php
-
 require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;
+use PHPJasper\PHPJasper;    
 
-$input = __DIR__ . '/vendor/lavela/phpjasper/examples/hello_world.jrxml';
-$output = __DIR__;
+$input = '/your_input_path/your_report.jasper';   
+$output = '/your_output_path';
+$options = [
+    'format' => ['pdf'],
+    'locale' => 'en',
+    'params' => [],
+    'db_connection' => [
+        'driver' => 'postgres', //mysql, ....
+        'username' => 'DB_USERNAME',
+        'password' => 'DB_PASSWORD',
+        'host' => 'DB_HOST',
+        'database' => 'DB_DATABASE',
+        'port' => '5432'
+    ]
+];
 
-$jasper = new JasperPHP;
+$jasper = new PHPJasper;
+
 $jasper->process(
-	$input,
-	$output,
-	array("pdf", "rtf"),
-	array(),
-	array(
-		'driver' => 'postgres',
-		'username' => 'vagrant',
-		'host' => 'localhost',
-		'database' => 'samples',
-		'port' => '5432',
-	)						
-)->execute();
-```
-
-###Using JasperPHP with Laravel 5.2!
-
-1. Install [Composer](http://getcomposer.org) if you don't have it.
-```
-composer require lavela/phpjasper
-```
-Or in your 'composer.json' file add:
-
-```javascript
-{
-    "require": {
-		"lavela/phpjasper": "2.*"
-    }
-}
-```
-2. And the just run:
-
-	**composer update**
-
-3. Add to your config/app.php providers array:
-
-	**JasperPHP\JasperPHPServiceProvider::class,**
-
-4. Create a folder **/examples** on **/public directory**
-
-5. Copy the file **hello_world.jrxml** in **/vendor/lavela/phpjasper/examples** from directory: **/public/examples**
-
-6. Run **php artisan serve**
-
-7. Access **localhost:8000/reports**
-
-8. Check the directory **/public/examples**. You now have 3 files, `hello_world.pdf`, `hello_world.rtf` and `hello_world.xml`.
-
-**Below the code you will use in your route.php**
-
-```php
-use JasperPHP\JasperPHP;
-
-Route::get('/reports', function () {
-
-    $output = public_path() . '/examples/'.time().'_hello_world';
-    $report = new JasperPHP;
-    $report->process(
-    	public_path() . '/examples/hello_world.jrxml',
+        $input,
         $output,
-        array('pdf', 'rtf', 'xml'),
-        array(),
-        array()  
-        )->execute();
-});
+        $options
+)->execute();
 ```
-In this example we generate reports pdf, rtf and xml.
 
-### See how easy it is to generate a report with a source an xml file: 
+**Note 2:**
+
+For a complete list of locales see [Supported Locales](http://www.oracle.com/technetwork/java/javase/java8locales-2095355.html)
+
+### Using MSSQL DataBase
 
 ```php
+require __DIR__ . '/vendor/autoload.php';
 
-use JasperPHP\JasperPHP;
+use PHPJasper\PHPJasper;
 
-$input = __DIR__ . '/vendor/lavela/examples/hello_world_xml.jrxml';
-$output = __DIR__ . '/';
+$input = '/your_input_path/your_report.jasper or .jrxml';   
+$output = '/your_output_path';
+$jdbc_dir = __DIR__ . '/vendor/lavela/phpjasper/bin/jaspertarter/jdbc';
+$options = [
+    'format' => ['pdf'],
+    'locale' => 'en',
+    'params' => [],
+    'db_connection' => [
+        'driver' => 'generic',
+        'host' => '127.0.0.1',
+        'port' => '1433',
+        'database' => 'DataBaseName',
+        'username' => 'UserName',
+        'password' => 'password',
+        'jdbc_driver' => 'com.microsoft.sqlserver.jdbc.SQLServerDriver',
+        'jdbc_url' => 'jdbc:sqlserver://127.0.0.1:1433;databaseName=Teste',
+        'jdbc_dir' => $jdbc_dir
+    ]
+];
 
-$jasper = new JasperPHP;
+$jasper = new PHPJasper;
 
 $jasper->process(
-    $input,
-    $output,
-    array('pdf'),
-    array(),
-    array(
+        $input,
+        $output,
+        $options
+    )->execute();
+```
+
+### Reports from a XML
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+use PHPJasper\PHPJasper;
+
+$input = '/your_input_path/your_report.jasper';   
+$output = '/your_output_path';
+$data_file = __DIR__ . '/your_data_files_path/your_xml_file.xml';
+$options = [
+    'format' => ['pdf'],
+    'params' => [],
+    'locale' => 'en',
+    'db_connection' => [
         'driver' => 'xml',
-        'xml_xpath' => '/CancelResponse/CancelResult/ID'
-        'data_file' => __DIR__ . '/vendor/lavela/examples/xmlExample.xml',
-    )
-)->execute();
+        'data_file' => $data_file,
+        'xml_xpath' => '/your_xml_xpath'
+    ]
+];
 
-```
-
-### See how easy it is to generate a report with a source an json file:
-
-```php
-
-use JasperPHP\JasperPHP;
-
-$input = __DIR__ . '/vendor/lavela/examples/hello_world_json.jrxml';
-$output = __DIR__ . '/';
-
-$jasper = new JasperPHP;
+$jasper = new PHPJasper;
 
 $jasper->process(
     $input,
     $output,
-    array('pdf'),
-    array(),
-    array(
-        'driver' => 'json',
-        'json_query' => 'contacts.person',
-        'data_file' => __DIR__ . '/vendor/lavela/examples/jsonExample.json'
-    )
+    $options
 )->execute();
-
 ```
 
-###MySQL
+### Reports from a JSON
 
-We ship the [MySQL connector](http://dev.mysql.com/downloads/connector/j/) (v5.1.34) in the `/src/JasperStarter/jdbc/` directory.
+```php
+require __DIR__ . '/vendor/autoload.php';
 
-###PostgreSQL
+use PHPJasper\PHPJasper;
+
+$input = '/your_input_path/your_report.jasper';   
+$output = '/your_output_path';
+
+$data_file = __DIR__ . '/your_data_files_path/your_json_file.json';
+$options = [
+    'format' => ['pdf'],
+    'params' => [],
+    'locale' => 'en',
+    'db_connection' => [
+        'driver' => 'json',
+        'data_file' => $data_file,
+        'json_query' => 'your_json_query'
+    ]
+];
+
+$jasper = new PHPJasper;
+
+$jasper->process(
+    $input,
+    $output,
+    $options
+)->execute();
+```
+
+### MySQL
+
+We ship the [MySQL connector](http://dev.mysql.com/downloads/connector/j/) (v5.1.39) in the `/src/JasperStarter/jdbc/` directory.
+
+### PostgreSQL
 
 We ship the [PostgreSQL](https://jdbc.postgresql.org/) (v9.4-1203) in the `/src/JasperStarter/jdbc/` directory.
 
-##Performance
+### MSSQL
+
+[Microsoft JDBC Drivers 6.0, 4.2, 4.1, and 4.0 for SQL Server
+](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=11774).
+
+## Performance
 
 Depends on the complexity, amount of data and the resources of your machine (let me know your use case).
 
 I have a report that generates a *Invoice* with a DB connection, images and multiple pages and it takes about **3/4 seconds** to process. I suggest that you use a worker to generate the reports in the background.
 
-##Thanks
+## Thanks
 
-Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
+[Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
 
-##Questions?
+[JetBrains](https://www.jetbrains.com/) for the [PhpStorm](https://www.jetbrains.com/phpstorm/) and all great tools.
 
-Drop me a line on Skype [leandro.bittencourt16] or E-Mail [leandrocintrabitencourt@gmail.com]
 
-Drop me a line on Skype [danielrodrigueslima] or E-Mail [danielrodrigues-ti@hotmail.com]
+## [Questions?](https://github.com/PHPJasper/phpjasper/issues)
 
-Drop me a line on E-Mail [jefferson.barreto@outlook.com]
+Open a new [Issue](https://github.com/PHPJasper/phpjasper/issues) or look for a closed issue
 
-Drop me a line on E-Mail [derick.tan988@gmail.com]
 
-##License
+## [License](https://github.com/PHPJasper/phpjasper/blob/master/LICENSE)
 
 MIT
+
+## [Contribute](https://github.com/PHPJasper/phpjasper/blob/master/CONTRIBUTING.md)
+
+Contribute to the community PHP, make a fork!
