@@ -55,7 +55,7 @@
             "JasperPHP": "Lavela\\JasperPHP\\Facades\\JasperPHP"
         }
     }
-  ],
+  ,
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.0"
